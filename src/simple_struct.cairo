@@ -51,7 +51,7 @@ impl OffchainMessageHashSimpleStruct of IOffchainMessageHash<SimpleStruct> {
 
 impl StructHashStarknetDomain of IStructHash<StarknetDomain> {
     fn hash_struct(self: @StarknetDomain) -> felt252 {
-        let mut state = PedersenTrait::new(0);
+        let mut state = PedersenTrait::new(1);
         state = state.update_with(STARKNET_DOMAIN_TYPE_HASH);
         state = state.update_with(*self);
         state = state.update_with(4);
